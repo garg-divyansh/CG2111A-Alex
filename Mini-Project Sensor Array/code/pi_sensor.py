@@ -257,7 +257,7 @@ def handleColorCommand():
         print("Refused: E-Stop is active.")
         return
     print("Sending color command...")
-    sendCommand(COMMAND_COLOR, data=b'This is a debug message')
+    sendCommand(COMMAND_COLOR, data=b'')
 
 
 # ----------------------------------------------------------------

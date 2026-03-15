@@ -217,7 +217,7 @@ static void handleCommand(const TPacket *cmd) {
             memset(&pkt, 0, sizeof(pkt));
             pkt.packetType = PACKET_TYPE_RESPONSE;
             pkt.command    = RESP_COLOR;
-            strncpy(pkt.data, "This is a debug message", sizeof(pkt.data) - 1);
+            // strncpy(pkt.data, "This is a debug message", sizeof(pkt.data) - 1);
             pkt.data[sizeof(pkt.data) - 1] = '\0';
             readColorChannels(&(pkt.params[0]), &(pkt.params[1]), &(pkt.params[2]));
             // pkt.params[0] = 5; pkt.params[1] = 5; pkt.params[2] = 5;
