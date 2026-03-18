@@ -1,4 +1,4 @@
-#define OUT_PIN 11   // TCS3200 OUT -> Arduino pin 11
+#define OUT_PIN 3   // TCS3200 OUT -> Arduino pin 11
 
 void setup() {
   Serial.begin(9600);

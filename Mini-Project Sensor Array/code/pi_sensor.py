@@ -92,7 +92,6 @@ def computeChecksum(data: bytes) -> int:
         result ^= b
     return result
 
-
 def packFrame(packetType, command, data=b'', params=None):
     """
     Build a framed packet: MAGIC | TPacket bytes | checksum.

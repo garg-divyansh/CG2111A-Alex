@@ -67,6 +67,7 @@ volatile bool   stateChanged = false;
  * in setup() -- check the ATMega2560 datasheet for the correct
  * registers for your chosen pin.
  */
+volatile static int count = 0;
 ISR(INT4_vect) {
     currTime = millis();
     if(currTime - lastTime > THRESHOLD)
@@ -77,8 +78,17 @@ ISR(INT4_vect) {
             stateChanged = true;
         }
         else if(!buttonpressed && buttonState == STATE_STOPPED) {
-            buttonState = STATE_RUNNING;
-            stateChanged = true;
+            if(count == 1)
+            {
+                buttonState = STATE_RUNNING;
+                stateChanged = true;
+                count = 0;
+            }
+            else
+            {
+                stateChanged = false;
+                count++;
+            }
         }
         lastTime = currTime;
     }
@@ -123,7 +133,7 @@ ISR(INT4_vect) {
  */
 
 static void redMode() {
-    PORTA &= 0b11110011;
+    PORTA &= 0b11110011;    
 }
 
 static void blueMode() {
@@ -153,10 +163,13 @@ static void readColorChannels(uint32_t *r, uint32_t *g, uint32_t *b) {
     PORTA |= 0b00000001;
     redMode();
     *r = getFrequency();  // red,   in Hz
+    // delay(10);
     greenMode();
     *g = getFrequency();  // green, in Hz
+    // delay(10);
     blueMode();
     *b = getFrequency();  // blue,  in Hz
+    // delay(10);
 }
 
 ISR(TIMER3_COMPA_vect) {
