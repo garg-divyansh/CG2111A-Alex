@@ -25,6 +25,9 @@ static unsigned long lastTime = 0, currTime;
 #define THRESHOLD 10 
 #define DEFAULT_SPEED 130
 
+static int speed = DEFAULT_SPEED;
+static char lastCmd = 'x';
+
 // =============================================================
 // Packet helpers (pre-implemented for you)
 // =============================================================
@@ -78,6 +81,9 @@ ISR(INT3_vect) {
         if(buttonpressed && buttonState == STATE_RUNNING) {
             buttonState = STATE_STOPPED;
             stateChanged = true;
+            stop();
+            lastCmd = 'x';
+            speed = DEFAULT_SPEED;
         }
         else if(!buttonpressed && buttonState == STATE_STOPPED) {
             if(count == 1 || flag)
@@ -298,14 +304,16 @@ static void robotArmHandler(char joint, int angle) {
  *   Call your color-reading function, then send a response packet with
  *   the channel frequencies in Hz.
  */
-static int speed = DEFAULT_SPEED;
-static char lastCmd = 'x';
+
 static void handleCommand(const TPacket *cmd) {
     if (cmd->packetType != PACKET_TYPE_COMMAND) return;
 
     switch (cmd->command) {
         case COMMAND_ESTOP:
             cli();
+            stop();
+            lastCmd = 'x';
+            speed = DEFAULT_SPEED;
             buttonState  = STATE_STOPPED;
             stateChanged = false;
             flag = true;
@@ -433,7 +441,7 @@ void setup() {
     // OCR3A = 6250;
 
     DDRA = 0b00001111;
-    DDRB = 0b00001111;
+    DDRB |= 0b00001111;
     TCCR5A = 0;
     TCCR5B = (1 << WGM52) | (1 << CS51);  // CTC mode, prescaler 8
     OCR5A  = 40000;                        // 20ms period
