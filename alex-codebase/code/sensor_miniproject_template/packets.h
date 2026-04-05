@@ -26,6 +26,7 @@ typedef enum {
     COMMAND_COLOR = 1,
     COMMAND_MOVE  = 2,
     COMMAND_ARM = 3,
+    COMMAND_RELEASE = 4,
 } TCommandType;
 
 typedef enum {

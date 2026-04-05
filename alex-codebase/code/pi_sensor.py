@@ -209,6 +209,15 @@ def printPacket(pkt):
                 print("Status: STOPPED")
         elif cmd == RESP_COLOR:
             print(f"R: {pkt['params'][0]} Hz, G: {pkt['params'][1]} Hz, B: {pkt['params'][2]} Hz")
+            red = pkt['params'][0]
+            green = pkt['params'][1]
+            blue = pkt['params'][2]
+            if red > green and red > blue:
+                print("Detected color: RED")
+            elif green > red and green > blue:
+                print("Detected color: GREEN")
+            elif blue > red and blue > green:
+                print("Detected color: BLUE")
         else:
             # TODO (Activity 2): add an elif branch here to handle your color
             # response.  Display the three channel frequencies in Hz, e.g.:
@@ -397,6 +406,10 @@ def runCommandInterface():
             elif key == 'e':
                 print("Sending E-Stop command...")
                 sendCommand(COMMAND_ESTOP)
+            
+            elif key == 'r':
+                print("Sending E-Stop release command...")
+                sendCommand(COMMAND_RELEASE)
 
             elif key == 'c':
                 handleColorCommand()

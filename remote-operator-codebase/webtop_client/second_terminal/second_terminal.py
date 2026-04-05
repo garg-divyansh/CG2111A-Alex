@@ -82,6 +82,7 @@ COMMAND_ESTOP  = 0
 COMMAND_COLOR = 1
 COMMAND_MOVE = 2
 COMMAND_ARM  = 3
+COMMAND_RELEASE = 4
 
 RESP_OK     = 0
 RESP_STATUS = 1
@@ -194,10 +195,17 @@ def _handleInput(line: str, client: TCPClient):
                            data=TCPDUMP_DEMO_TEXT)
         sendTPacketFrame(client.sock, frame)
         print("[second_terminal] Sent: E-STOP with demo text 'secret information'")
+    
+    elif line == 'r':
+        frame = _packFrame(PACKET_TYPE_COMMAND, COMMAND_RELEASE,
+                           data=TCPDUMP_DEMO_TEXT)
+        sendTPacketFrame(client.sock, frame)
+        print("[second_terminal] Sent: E-STOP RELEASE with demo text 'secret information'")
 
     elif line == 'q':
         print("[second_terminal] Quitting.")
         raise KeyboardInterrupt
+        
     elif robotArmCommand(line):
         joint = line[0].upper()
         if joint == 'H':

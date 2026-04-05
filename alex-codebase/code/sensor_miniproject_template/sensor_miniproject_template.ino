@@ -409,6 +409,29 @@ static void handleCommand(const TPacket *cmd) {
         case COMMAND_ARM:
             robotArmHandler(cmd->data[0], cmd->params[0]);
             break;
+        
+        case COMMAND_RELEASE:
+            cli();
+            buttonState  = STATE_RUNNING;
+            stateChanged = false;
+            flag = true;
+            sei();
+            {
+                // The data field of a TPacket can carry a short debug string (up to
+                // 31 characters).  pi_sensor.py prints it automatically for any packet
+                // where data is non-empty, so you can use it to send debug messages
+                // from the Arduino to the Pi terminal -- similar to Serial.print().
+                TPacket pkt;
+                memset(&pkt, 0, sizeof(pkt));
+                pkt.packetType = PACKET_TYPE_RESPONSE;
+                pkt.command    = RESP_OK;
+                strncpy(pkt.data, "This is a debug message", sizeof(pkt.data) - 1);
+                pkt.data[sizeof(pkt.data) - 1] = '\0';
+                sendFrame(&pkt);
+            }
+            sendStatus(STATE_RUNNING);
+            break;
+
 
     }
 }
