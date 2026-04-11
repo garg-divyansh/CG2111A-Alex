@@ -262,7 +262,7 @@ def handleColorCommand():
 # TODO (Activity 3): import the camera library provided (alex_camera.py).
 from alex_camera import cameraOpen, cameraClose, captureGreyscaleFrame, renderGreyscaleFrame
 _camera = cameraOpen()          # TODO (Activity 3): open the camera (cameraOpen()) before first use.
-_frames_remaining = 10   # frames remaining before further captures are refused
+_frames_remaining = 15   # frames remaining before further captures are refused
 
 
 def handleCameraCommand():
