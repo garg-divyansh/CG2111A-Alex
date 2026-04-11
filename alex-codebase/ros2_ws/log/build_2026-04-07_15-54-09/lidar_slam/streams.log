@@ -1,0 +1,25 @@
+[1.950s] Invoking command in '/ros2_ws/src/lidar_slam': PYTHONPATH=/ros2_ws/build/lidar_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/install/lidar_slam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lidar_slam build --build-base /ros2_ws/build/lidar_slam/build install --record /ros2_ws/build/lidar_slam/install.log --single-version-externally-managed install_data
+[2.620s] running egg_info
+[2.622s] writing ../../build/lidar_slam/lidar_slam.egg-info/PKG-INFO
+[2.624s] writing dependency_links to ../../build/lidar_slam/lidar_slam.egg-info/dependency_links.txt
+[2.628s] writing entry points to ../../build/lidar_slam/lidar_slam.egg-info/entry_points.txt
+[2.628s] writing requirements to ../../build/lidar_slam/lidar_slam.egg-info/requires.txt
+[2.628s] writing top-level names to ../../build/lidar_slam/lidar_slam.egg-info/top_level.txt
+[2.634s] reading manifest file '../../build/lidar_slam/lidar_slam.egg-info/SOURCES.txt'
+[2.637s] writing manifest file '../../build/lidar_slam/lidar_slam.egg-info/SOURCES.txt'
+[2.638s] running build
+[2.638s] running build_py
+[2.638s] copying lidar_slam/lidar_node.py -> /ros2_ws/build/lidar_slam/build/lib/lidar_slam
+[2.639s] running install
+[2.641s] running install_lib
+[2.647s] copying /ros2_ws/build/lidar_slam/build/lib/lidar_slam/lidar_node.py -> /ros2_ws/install/lidar_slam/lib/python3.10/site-packages/lidar_slam
+[2.650s] byte-compiling /ros2_ws/install/lidar_slam/lib/python3.10/site-packages/lidar_slam/lidar_node.py to lidar_node.cpython-310.pyc
+[2.654s] running install_data
+[2.655s] running install_egg_info
+[2.660s] removing '/ros2_ws/install/lidar_slam/lib/python3.10/site-packages/lidar_slam-0.0.0-py3.10.egg-info' (and everything under it)
+[2.663s] Copying ../../build/lidar_slam/lidar_slam.egg-info to /ros2_ws/install/lidar_slam/lib/python3.10/site-packages/lidar_slam-0.0.0-py3.10.egg-info
+[2.668s] running install_scripts
+[2.740s] Installing lidar_node script to /ros2_ws/install/lidar_slam/lib/lidar_slam
+[2.740s] Installing scan_matcher script to /ros2_ws/install/lidar_slam/lib/lidar_slam
+[2.741s] writing list of installed files to '/ros2_ws/build/lidar_slam/install.log'
+[2.847s] Invoked command in '/ros2_ws/src/lidar_slam' returned '0': PYTHONPATH=/ros2_ws/build/lidar_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/install/lidar_slam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lidar_slam build --build-base /ros2_ws/build/lidar_slam/build install --record /ros2_ws/build/lidar_slam/install.log --single-version-externally-managed install_data

@@ -1,0 +1,3 @@
+source;share/pyrplidar/hook/pythonpath.ps1
+source;share/pyrplidar/hook/pythonpath.dsv
+source;share/pyrplidar/hook/pythonpath.sh

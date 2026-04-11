@@ -211,7 +211,7 @@ ISR(INT2_vect) {
 #define BASE_MIN      5
 #define BASE_MAX      180
 #define SHOULDER_MIN  70
-#define SHOULDER_MAX  170
+#define SHOULDER_MAX  175
 #define ELBOW_MIN     0
 #define ELBOW_MAX     90
 #define GRIPPER_MIN   80
@@ -353,50 +353,52 @@ static void handleCommand(const TPacket *cmd) {
         case COMMAND_MOVE:
             // TODO (Activity 3): add your own command and response types for the motor driver.
             if(cmd->data[0] == 'w') {
-                speed = DEFAULT_SPEED;
+                if(lastCmd != 'w') {
+                    speed = DEFAULT_SPEED;
+                }
                 forward(speed);
                 lastCmd = 'w';
             }
             else if(cmd->data[0] == 'a') {
-                speed = 210;
+                if(lastCmd != 'a') {
+                    speed = 210;
+                }
                 cw(speed);
                 lastCmd = 'a';
             }
             else if(cmd->data[0] == 's') {
-                speed = DEFAULT_SPEED;
+                if(lastCmd != 's') {
+                    speed = DEFAULT_SPEED;
+                }
                 backward(speed);
                 lastCmd = 's'; 
             }
             else if(cmd->data[0] == 'd') {
-                speed = 210;
+                if(lastCmd != 'd') {
+                    speed = 210;
+                }
                 ccw(speed);
                 lastCmd = 'd';
             }
             else if(cmd->data[0] == 'x') {
                 stop();
-                lastCmd = 'x';
-                speed = DEFAULT_SPEED;
             }
             else if(cmd->data[0] == '+') {
-                if(lastCmd != 'x') {
-                    speed += 10;
-                    speed = constrain(speed, 80, 255);
-                }
+                speed += 10;
+                speed = constrain(speed, 80, 255);
             }
             else if(cmd->data[0] == '-') {
-                if(lastCmd != 'x') {
-                    speed -= 10;
-                    speed = constrain(speed, 80, 255);
-                }
+                speed -= 10;
+                speed = constrain(speed, 80, 255);
             }
             if((cmd->data[0] == '+' || cmd->data[0] == '-') && lastCmd != 'x') {
-                switch(lastCmd) {
+                /* switch(lastCmd) {
                     case 'w': forward(speed); break;
                     case 'a': cw(speed); break;
                     case 's': backward(speed); break;
                     case 'd': ccw(speed); break;
                     case 'x': stop(); break;
-                }
+                }*/
                 TPacket pkt;
                 memset(&pkt, 0, sizeof(pkt));
                 pkt.packetType = PACKET_TYPE_RESPONSE;

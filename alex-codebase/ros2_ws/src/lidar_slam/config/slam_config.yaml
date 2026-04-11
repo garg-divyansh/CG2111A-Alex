@@ -1,0 +1,60 @@
+# ROS 2 Humble - slam_toolbox parameter file
+# Optimized for Raspberry Pi + RPLidar (No Odometry)
+
+slam_toolbox:
+  ros__parameters:
+
+    # Solver Parameters
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function_type: None
+
+    # Toolbox Parameters
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+    scan_topic: /scan
+    mode: mapping # Change to 'localization' only after you have a full map
+
+    # Matcher Parameters (THE FIX)
+    # ---------------------------------------------------------
+    distance_variance_penalty: 0.5      
+    angle_variance_penalty: 0.5    
+    
+    # Lowering these makes the SLAM "trust" noisy laser data more
+    fine_search_admissible_number_of_iterations: 15
+    resampling_interval: 1.0
+    
+    # CRITICAL: Lower this to 0.001 to stop the "46 point" rejection
+    minimum_score: 0.001 
+    
+    # Increase these to help the "Search" find where the robot moved
+    scan_matching_search_radius: 0.5
+    scan_matching_search_angle_offset: 0.349 # ~20 degrees
+    # ---------------------------------------------------------
+
+    # Map Update Parameters
+    map_update_interval: 2.0
+    resolution: 0.05
+    max_laser_range: 12.0
+    minimum_time_interval: 0.2
+    transform_timeout: 0.5
+    tf_buffer_duration: 30.0
+    stack_size_to_use: 40000000 # Increase for Pi stability
+
+    # General Parameters
+    use_scan_matching: true
+    use_scan_barycenter: true
+    minimum_travel_distance: 0.1    # Update map after 10cm of movement
+    minimum_travel_heading: 0.1     # Update map after ~6 degrees of rotation
+    scan_buffer_size: 10
+    scan_buffer_maximum_scan_distance: 10.0
+    link_match_minimum_response_fine: 0.01
+    
+    # Loop Closure (Disabled for initial stability, enable later)
+    do_loop_closing: true
+    loop_search_maximum_distance: 3.0
+    loop_search_skew_dist: 2.0

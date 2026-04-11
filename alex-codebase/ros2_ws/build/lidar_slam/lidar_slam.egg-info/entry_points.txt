@@ -1,0 +1,4 @@
+[console_scripts]
+lidar_node = lidar_slam.lidar_node:main
+scan_matcher = lidar_slam.scan_matcher:main
+

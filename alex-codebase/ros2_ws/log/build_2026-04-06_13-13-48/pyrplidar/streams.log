@@ -1,0 +1,30 @@
+[2.536s] Invoking command in '/ros2_ws/pyrplidar': PYTHONPATH=/ros2_ws/build/pyrplidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/install/pyrplidar/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pyrplidar build --build-base /ros2_ws/build/pyrplidar/build install --record /ros2_ws/build/pyrplidar/install.log --single-version-externally-managed
+[3.265s] running egg_info
+[3.265s] creating ../build/pyrplidar/pyrplidar.egg-info
+[3.266s] writing ../build/pyrplidar/pyrplidar.egg-info/PKG-INFO
+[3.266s] writing dependency_links to ../build/pyrplidar/pyrplidar.egg-info/dependency_links.txt
+[3.267s] writing requirements to ../build/pyrplidar/pyrplidar.egg-info/requires.txt
+[3.268s] writing top-level names to ../build/pyrplidar/pyrplidar.egg-info/top_level.txt
+[3.269s] writing manifest file '../build/pyrplidar/pyrplidar.egg-info/SOURCES.txt'
+[3.273s] reading manifest file '../build/pyrplidar/pyrplidar.egg-info/SOURCES.txt'
+[3.276s] writing manifest file '../build/pyrplidar/pyrplidar.egg-info/SOURCES.txt'
+[3.277s] running build
+[3.277s] running build_py
+[3.277s] creating /ros2_ws/build/pyrplidar/build
+[3.278s] creating /ros2_ws/build/pyrplidar/build/lib
+[3.278s] copying pyrplidar.py -> /ros2_ws/build/pyrplidar/build/lib
+[3.279s] copying pyrplidar_serial.py -> /ros2_ws/build/pyrplidar/build/lib
+[3.280s] copying pyrplidar_protocol.py -> /ros2_ws/build/pyrplidar/build/lib
+[3.280s] running install
+[3.281s] running install_lib
+[3.284s] copying /ros2_ws/build/pyrplidar/build/lib/pyrplidar_serial.py -> /ros2_ws/install/pyrplidar/lib/python3.10/site-packages
+[3.285s] copying /ros2_ws/build/pyrplidar/build/lib/pyrplidar.py -> /ros2_ws/install/pyrplidar/lib/python3.10/site-packages
+[3.286s] copying /ros2_ws/build/pyrplidar/build/lib/pyrplidar_protocol.py -> /ros2_ws/install/pyrplidar/lib/python3.10/site-packages
+[3.288s] byte-compiling /ros2_ws/install/pyrplidar/lib/python3.10/site-packages/pyrplidar_serial.py to pyrplidar_serial.cpython-310.pyc
+[3.289s] byte-compiling /ros2_ws/install/pyrplidar/lib/python3.10/site-packages/pyrplidar.py to pyrplidar.cpython-310.pyc
+[3.294s] byte-compiling /ros2_ws/install/pyrplidar/lib/python3.10/site-packages/pyrplidar_protocol.py to pyrplidar_protocol.cpython-310.pyc
+[3.307s] running install_egg_info
+[3.314s] Copying ../build/pyrplidar/pyrplidar.egg-info to /ros2_ws/install/pyrplidar/lib/python3.10/site-packages/pyrplidar-0.1.2-py3.10.egg-info
+[3.318s] running install_scripts
+[3.394s] writing list of installed files to '/ros2_ws/build/pyrplidar/install.log'
+[3.550s] Invoked command in '/ros2_ws/pyrplidar' returned '0': PYTHONPATH=/ros2_ws/build/pyrplidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/install/pyrplidar/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pyrplidar build --build-base /ros2_ws/build/pyrplidar/build install --record /ros2_ws/build/pyrplidar/install.log --single-version-externally-managed

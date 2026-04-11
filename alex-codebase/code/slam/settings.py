@@ -85,7 +85,7 @@ LIDAR_OFFSET_DEG = 0
 # a full SLAM update.  If a scan has fewer valid points we reuse the previous
 # good scan instead.  Increase this if the map is noisy; decrease it if the
 # robot is in a sparse environment.
-MIN_VALID_POINTS = 150
+MIN_VALID_POINTS = 100
 
 # Number of scans to skip at startup.  The LIDAR motor needs a few rotations
 # to reach full speed; early scans are noisier than steady-state scans.

@@ -1,0 +1,28 @@
+running egg_info
+creating ../build/pyrplidar/pyrplidar.egg-info
+writing ../build/pyrplidar/pyrplidar.egg-info/PKG-INFO
+writing dependency_links to ../build/pyrplidar/pyrplidar.egg-info/dependency_links.txt
+writing requirements to ../build/pyrplidar/pyrplidar.egg-info/requires.txt
+writing top-level names to ../build/pyrplidar/pyrplidar.egg-info/top_level.txt
+writing manifest file '../build/pyrplidar/pyrplidar.egg-info/SOURCES.txt'
+reading manifest file '../build/pyrplidar/pyrplidar.egg-info/SOURCES.txt'
+writing manifest file '../build/pyrplidar/pyrplidar.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /ros2_ws/build/pyrplidar/build
+creating /ros2_ws/build/pyrplidar/build/lib
+copying pyrplidar.py -> /ros2_ws/build/pyrplidar/build/lib
+copying pyrplidar_serial.py -> /ros2_ws/build/pyrplidar/build/lib
+copying pyrplidar_protocol.py -> /ros2_ws/build/pyrplidar/build/lib
+running install
+running install_lib
+copying /ros2_ws/build/pyrplidar/build/lib/pyrplidar_serial.py -> /ros2_ws/install/pyrplidar/lib/python3.10/site-packages
+copying /ros2_ws/build/pyrplidar/build/lib/pyrplidar.py -> /ros2_ws/install/pyrplidar/lib/python3.10/site-packages
+copying /ros2_ws/build/pyrplidar/build/lib/pyrplidar_protocol.py -> /ros2_ws/install/pyrplidar/lib/python3.10/site-packages
+byte-compiling /ros2_ws/install/pyrplidar/lib/python3.10/site-packages/pyrplidar_serial.py to pyrplidar_serial.cpython-310.pyc
+byte-compiling /ros2_ws/install/pyrplidar/lib/python3.10/site-packages/pyrplidar.py to pyrplidar.cpython-310.pyc
+byte-compiling /ros2_ws/install/pyrplidar/lib/python3.10/site-packages/pyrplidar_protocol.py to pyrplidar_protocol.cpython-310.pyc
+running install_egg_info
+Copying ../build/pyrplidar/pyrplidar.egg-info to /ros2_ws/install/pyrplidar/lib/python3.10/site-packages/pyrplidar-0.1.2-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/ros2_ws/build/pyrplidar/install.log'

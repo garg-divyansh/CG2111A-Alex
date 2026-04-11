@@ -145,6 +145,11 @@ def _printPacket(pkt):
 # Input handling
 # ---------------------------------------------------------------------------
 
+def robotArmCommand(line: str):
+    if (line != 'H' and len(line) != 4) or line[0].upper() not in 'HVBESG' or int(line[1:]) < 0:
+        return False
+    return True
+
 def _handleInput(line: str, client: TCPClient):
     """Handle one line of keyboard input."""
     line = line.strip().lower()
@@ -155,11 +160,88 @@ def _handleInput(line: str, client: TCPClient):
         frame = _packFrame(PACKET_TYPE_COMMAND, COMMAND_ESTOP)
         sendTPacketFrame(client.sock, frame)
         print("[second_terminal] Sent: E-STOP")
+    
+    elif line == 'r':
+        frame = _packFrame(PACKET_TYPE_COMMAND, COMMAND_RELEASE)
+        sendTPacketFrame(client.sock, frame)
+        print("[second_terminal] Sent: E-STOP RELEASE")
 
     elif line == 'q':
         print("[second_terminal] Quitting.")
         raise KeyboardInterrupt
+    elif line == 'c':
+        params = [0] * PARAMS_COUNT
+        params[0] = 180
+        joint = 'G'
+        frame = _packFrame(
+            PACKET_TYPE_COMMAND,
+            COMMAND_ARM,
+            data=joint.encode('ascii'),
+            params=params
+        )
 
+        sendTPacketFrame(client.sock, frame)
+        print(f"[second_terminal] Sent: ARM command with data '{line}'")
+    
+    elif line == 'o':
+        params = [0] * PARAMS_COUNT
+        params[0] = 000
+        joint = 'G'
+        frame = _packFrame(
+            PACKET_TYPE_COMMAND,
+            COMMAND_ARM,
+            data=joint.encode('ascii'),
+            params=params
+        )
+
+        sendTPacketFrame(client.sock, frame)
+        print(f"[second_terminal] Sent: ARM command with data '{line}'")
+    elif line == 'u':
+        params = [0] * PARAMS_COUNT
+        params[0] = 180
+        joint = 'S'
+        frame = _packFrame(
+            PACKET_TYPE_COMMAND,
+            COMMAND_ARM,
+            data=joint.encode('ascii'),
+            params=params
+        )
+
+        sendTPacketFrame(client.sock, frame)
+        print(f"[second_terminal] Sent: ARM command with data '{line}'")
+    elif line == 'd':
+        params = [0] * PARAMS_COUNT
+        params[0] = 130
+        joint = 'S'
+        frame = _packFrame(
+            PACKET_TYPE_COMMAND,
+            COMMAND_ARM,
+            data=joint.encode('ascii'),
+            params=params
+        )
+
+        sendTPacketFrame(client.sock, frame)
+        print(f"[second_terminal] Sent: ARM command with data '{line}'")
+
+    elif robotArmCommand(line):
+        joint = line[0].upper()
+        if joint == 'H':
+            angle = 0
+        else:
+            angle = int(line[1:])
+
+        params = [0] * PARAMS_COUNT
+        params[0] = angle
+
+        frame = _packFrame(
+            PACKET_TYPE_COMMAND,
+            COMMAND_ARM,
+            data=joint.encode('ascii'),
+            params=params
+        )
+
+        sendTPacketFrame(client.sock, frame)
+        print(f"[second_terminal] Sent: ARM command with data '{line}'")
     else:
         print(f"[second_terminal] Unknown: '{line}'.  Valid: e (E-Stop)  q (quit)")
 

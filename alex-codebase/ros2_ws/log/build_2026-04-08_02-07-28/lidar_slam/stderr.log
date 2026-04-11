@@ -1,0 +1,5 @@
+  File "/ros2_ws/install/lidar_slam/lib/python3.10/site-packages/lidar_slam/lidar_node.py", line 129
+    rclpy.sp
+            ^
+SyntaxError: expected 'except' or 'finally' block
+
