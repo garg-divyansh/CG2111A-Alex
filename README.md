@@ -2,13 +2,8 @@
 ### CG2111A Engineering Principles and Practice II  
 **Team B02-G7 | Semester 2 AY2025/2026**
 
-![NUS](https://img.shields.io/badge/NUS-Computer%20Engineering-orange?style=for-the-badge)  
-![ROS2](https://img.shields.io/badge/ROS2-Humble-blue?style=for-the-badge&logo=ros)  
-![RaspberryPi](https://img.shields.io/badge/Raspberry%20Pi-4-red?style=for-the-badge&logo=raspberrypi)  
-![Arduino](https://img.shields.io/badge/Arduino-Mega-00979D?style=for-the-badge&logo=arduino)  
-![C++](https://img.shields.io/badge/C++-Firmware-blue?style=for-the-badge&logo=c%2B%2B)  
-![Python](https://img.shields.io/badge/Python-Backend-yellow?style=for-the-badge&logo=python)  
-![Docker](https://img.shields.io/badge/Docker-ROS2%20Env-2496ED?style=for-the-badge&logo=docker)  
+![NUS](https://img.shields.io/badge/NUS-Computer%20Engineering-orange?style=for-the-badge) 
+![ROS2](https://img.shields.io/badge/ROS2-Humble-blue?style=for-the-badge&logo=ros) ![RaspberryPi](https://img.shields.io/badge/Raspberry%20Pi-4-red?style=for-the-badge&logo=raspberrypi) ![Arduino](https://img.shields.io/badge/Arduino-Mega-00979D?style=for-the-badge&logo=arduino) ![C++](https://img.shields.io/badge/C++-Firmware-blue?style=for-the-badge&logo=c%2B%2B) ![Python](https://img.shields.io/badge/Python-Backend-yellow?style=for-the-badge&logo=python) ![Docker](https://img.shields.io/badge/Docker-ROS2%20Env-2496ED?style=for-the-badge&logo=docker)  
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
 ---
