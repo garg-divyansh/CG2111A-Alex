@@ -641,18 +641,16 @@ A URDF Model was used for visualization:
 ```mermaid
 stateDiagram-v2
     direction LR
-
-    [*] --> RUNNING
-    
-    RUNNING --> STOPPED : E-stop button\npressed down
     
     state "State: STOPPED" as STOP1
     state "State: STOPPED" as STOP2
     state "State: STOPPED" as STOP3
+    state "State: RUNNING" as RUN1
 
-    STOPPED --> STOP1 : E-stop button\nreleased
-    STOP1 --> STOP2 : E-stop button\npressed down
-    STOP2 --> RUNNING : E-stop button\nreleased
+    RUN1 --> STOP1 : E-stop button pressed down
+    STOP1 --> STOP2 : E-stop button released
+    STOP2 --> STOP3 : E-stop button pressed down
+    STOP3 --> RUN1 : E-stop button released
 ```
  
 ---
