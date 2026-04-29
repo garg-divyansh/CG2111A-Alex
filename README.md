@@ -32,8 +32,6 @@ The system operates under strict constraints:
 
 This project integrates mechanical, electronic, and software components to solve a real-world problem, providing hands-on experience in robotics, navigation, sensing, and system coordination.
 
----
-
 # 🧠 Section 2 Review of State of the Art
 
 ## 2.1 Clearpath Jackal UGV
@@ -58,13 +56,9 @@ This project integrates mechanical, electronic, and software components to solve
 | Jackal | Modular, extensible, multi-operator | Wheeled drivetrain |
 | 310 SUGV | All-terrain mobility, rugged | Single operator load |
 
----
-
 # 🏗️ Section 3 System Architecture
 
 ![System Architecture](assets/architecture/system_architecture.png)
-
----
 
 # 🔩 Section 4 Hardware Design
 
@@ -85,8 +79,6 @@ The Alex Robot comprises a **4WD 2-layer chassis**.
 - Emergency Stop button  
 
 ![Hardware Design](assets/hardware/robot_chassis.png)
-
----
 
 # ⚙️ Section 5 Firmware Design
 
