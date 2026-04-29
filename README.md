@@ -642,10 +642,10 @@ A URDF Model was used for visualization:
 stateDiagram-v2
     direction LR
     
+    state "State: RUNNING" as RUN1
     state "State: STOPPED" as STOP1
     state "State: STOPPED" as STOP2
     state "State: STOPPED" as STOP3
-    state "State: RUNNING" as RUN1
 
     RUN1 --> STOP1 : E-stop button pressed down
     STOP1 --> STOP2 : E-stop button released
