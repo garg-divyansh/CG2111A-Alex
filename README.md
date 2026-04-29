@@ -643,11 +643,16 @@ stateDiagram-v2
     direction LR
 
     [*] --> RUNNING
+    
+    RUNNING --> STOPPED : E-stop button\npressed down
+    
+    state "State: STOPPED" as STOP1
+    state "State: STOPPED" as STOP2
+    state "State: STOPPED" as STOP3
 
-    RUNNING --> STOPPED : E-Stop button pressed
-    STOPPED --> RUNNING : E-Stop button released
-    STOPPED --> STOPPED : E-Stop button pressed\n(no change)
-    RUNNING --> RUNNING : E-Stop button released\n(no change)
+    STOPPED --> STOP1 : E-stop button\nreleased
+    STOP1 --> STOP2 : E-stop button\npressed down
+    STOP2 --> RUNNING : E-stop button\nreleased
 ```
  
 ---
